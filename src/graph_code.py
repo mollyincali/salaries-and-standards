@@ -36,11 +36,40 @@ ax1.scatter(x, data1, color=color)
 ax1.scatter(x, data2, color = 'blue')
 ax1.tick_params(axis='y', labelcolor=color)
 
-ax2 = ax1.twinx()  
+ax2 = ax1.twinx() 
+
 color = 'tab:green'
-ax2.set_ylabel('Salary', color=color) 
-ax2.bar(x, salary, color=color)
+ax2.set_ylabel('Salary', color=color)
+ax2.bar(x, salary, color=color, edgecolor = 'None', alpha = 0.5)
 ax2.tick_params(axis='y', labelcolor=color)
 
-fig.tight_layout()
+fig.tight_layout() 
+plt.show()
+
+#--- testing out by county
+la_3math = full3math[full3math['County Code'] == 19].sort_values(['avg'])
+la_3ela = full3ela[full3ela['County Code'] == 19].sort_values(['avg'])
+
+x = la_3math['District Name']
+data1 = la_3math['Percentage Standard Met and Above']
+data2 = la_3ela['Percentage Standard Met and Above']
+salary = la_3ela['avg']
+
+fig, ax1 = plt.subplots(figsize=(18,9))
+
+color = 'tab:red'
+ax1.set_xlabel('District')
+ax1.set_ylabel('Percentage Met or Above', color=color)
+ax1.scatter(x, data1, color=color)
+ax1.scatter(x, data2, color = 'blue')
+ax1.tick_params(axis='y', labelcolor=color)
+
+ax2 = ax1.twinx() 
+
+color = 'tab:green'
+ax2.set_ylabel('Salary', color=color)
+ax2.bar(x, salary, color=color, edgecolor = 'None', alpha = 0.5)
+ax2.tick_params(axis='y', labelcolor=color)
+
+fig.tight_layout() 
 plt.show()
