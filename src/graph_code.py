@@ -1,38 +1,92 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+
 from full_eda import *
 
-#graph grade 3 ela and math
-x = full3ela['District Name']
-y = full3ela['Percentage Standard Met and Above']
-y2 = full3math['Percentage Standard Met and Above']
+#Correlation 
+#If pos corr as avg goes up, % goes up
+#If neg corr as avg goes up, % goes down
+corrMatrix = (fullela.iloc[:, [7, 11]]).corr()
+sn.heatmap(corrMatrix, annot=True)
+plt.show()
 
-fig, ax = plt.subplots(figsize = (10, 6))
-plt.xticks(rotation=90)
-ax.scatter(x, y, color = 'green')
-ax.scatter(x, y2, color = 'pink');
+#COORELATION DATA all counties
+corr_list = []
+for i in range(1, 59):
+    try:
+        temp_df = fullela[fullela['County Code'] == i][['avg','Met or Above']]
+        corrMatrix = temp_df.corr()
+        corr_list.append(corrMatrix.iloc[0, 1])
+        sn.heatmap(corrMatrix, annot=True)
+        plt.title(i)
+        plt.show()
+    except:
+        print("Bummer!!")
 
-#graph salary
-x = full3ela['District Name']
-y2 = full3ela['avg']
+#make a PD series of county num and correlation
+corr_series = pd.Series(corr_list, index = range(1,59)).sort_values()
 
-fig, ax = plt.subplots(figsize = (10, 6))
-plt.xticks(rotation=90)
-ax.bar(x, y2, color = 'blue');
+#Look at top 5 and bottom 5
+for i in [20, 53, 44, 11, 25, 48, 42, 43, 31, 41]:
+    try:
+        temp_df = fullela[fullela['County Code'] == i][['avg','Met or Above']]
+        corrMatrix = temp_df.corr()
+        corr_list.append(corrMatrix.iloc[0, 1])
+        sn.heatmap(corrMatrix, annot=True)
+        plt.title(i)
+        plt.show()
+    except:
+        print("Bummer!!")
 
-# BELOW need to work on transparency
-x = full3ela['District Name']
-data1 = full3ela['Percentage Standard Met and Above']
-data2 = full3math['Percentage Standard Met and Above']
-salary = full3ela['avg']
+"""
+##Attempt at side by side plot and salary
+sc_math = fullmath[fullmath['County Code'] == 43].sort_values(['avg'])
+sc_ela = fullela[fullela['County Code'] == 43].sort_values(['avg'])
+
+x = sc_math['District Name']
+data1 = sc_math['Met or Above']
+data2 = sc_ela['Met or Above']
+salary = sc_ela['avg']
 
 fig, ax1 = plt.subplots(figsize=(18,9))
 
 color = 'tab:red'
 ax1.set_xlabel('District')
+plt.xticks(rotation=60)
 ax1.set_ylabel('Percentage Met or Above', color=color)
-ax1.scatter(x, data1, color=color)
+ax1.bar(x, data1, color = color)
+ax1.bar(x, data2, color = 'blue')
+ax1.tick_params(axis='y', labelcolor=color)
+
+ax2 = ax1.twinx() 
+
+color = 'tab:green'
+ax2.set_ylabel('Salary', color=color)
+ax2.scatter(x, salary, color=color, zorder=1)
+ax2.tick_params(axis='y', labelcolor=color)
+
+fig.tight_layout() 
+plt.show()
+"""
+#------------------
+"""
+## Graph with bar chart of salary and dots of % proficient NOT GOOD
+sc_3math = full3math[full3math['County Code'] == 43].sort_values(['avg'])
+sc_3ela = full3ela[full3ela['County Code'] == 43].sort_values(['avg'])
+
+x = sc_3math['District Name']
+data1 = sc_3math['Met or Above']
+data2 = sc_3ela['Met or Above']
+salary = sc_3ela['avg']
+
+fig, ax1 = plt.subplots(figsize=(18,9))
+
+color = 'tab:red'
+ax1.set_xlabel('District')
+plt.xticks(rotation=60)
+ax1.set_ylabel('Percentage Met or Above', color=color)
+ax1.scatter(x, data1, color = color)
 ax1.scatter(x, data2, color = 'blue')
 ax1.tick_params(axis='y', labelcolor=color)
 
@@ -45,31 +99,4 @@ ax2.tick_params(axis='y', labelcolor=color)
 
 fig.tight_layout() 
 plt.show()
-
-#--- testing out by county
-la_3math = full3math[full3math['County Code'] == 19].sort_values(['avg'])
-la_3ela = full3ela[full3ela['County Code'] == 19].sort_values(['avg'])
-
-x = la_3math['District Name']
-data1 = la_3math['Percentage Standard Met and Above']
-data2 = la_3ela['Percentage Standard Met and Above']
-salary = la_3ela['avg']
-
-fig, ax1 = plt.subplots(figsize=(18,9))
-
-color = 'tab:red'
-ax1.set_xlabel('District')
-ax1.set_ylabel('Percentage Met or Above', color=color)
-ax1.scatter(x, data1, color=color)
-ax1.scatter(x, data2, color = 'blue')
-ax1.tick_params(axis='y', labelcolor=color)
-
-ax2 = ax1.twinx() 
-
-color = 'tab:green'
-ax2.set_ylabel('Salary', color=color)
-ax2.bar(x, salary, color=color, edgecolor = 'None', alpha = 0.5)
-ax2.tick_params(axis='y', labelcolor=color)
-
-fig.tight_layout() 
-plt.show()
+"""
