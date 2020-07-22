@@ -4,7 +4,7 @@
 2019 statewide testing results and teacher salary for California
 
 **High-level description:** 
-- Explore statewide testing results from 2019 for students in grades 3 - 11 and teacher salary in California. I would like to see if a teacher's salary has an impact on statewide testing results.
+- Explore statewide testing results from 2019 for students in grades 3 - 11 and teacher salary in California. My wondering is if there is a relationship between teacher salary and the percentage of students who score proficient or higher.
 
 - If time allows, I would like to also bring in healthy kid survey results to see if those districts with the highest percentage of students meeting standards, and well-paid teachers have students who feel connected to the school.
 
@@ -21,3 +21,4 @@
 
 **Data Exploration**
 - Teacher Salary Grouped by County
+![title](images/salary_bycounty.png)
