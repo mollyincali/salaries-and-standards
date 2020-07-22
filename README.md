@@ -22,3 +22,6 @@
 **Data Exploration**
 - Teacher Salary Grouped by County
 ![title](images/salary_bycounty.png)
+
+- Teacher Salary vs Percent of Students met or above
+![title](images/scatterpay_met.png)
