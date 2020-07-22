@@ -4,6 +4,19 @@ import numpy as np
 
 from full_eda import *
 
+#Teacher Salary Graph
+salary_county = full.groupby('County Name').agg({'avg':'mean'}).reset_index().sort_values(by='avg')
+
+fig, ax = plt.subplots(figsize= (18,9))
+ax.bar(salary_county['County Name'], salary_county['avg'], color = 'pink')
+ax.set_ylabel('Salary', fontdict={'fontname':'Helvetica', 'fontsize':20})
+ax.axhline(72590, linestyle ='--', color = 'purple')
+plt.xticks(rotation=90)
+plt.ylim(40000, 95000)
+plt.title('Average Teacher Salary By County', fontdict={'fontname':'Helvetica', 'fontsize':20})
+fig.tight_layout
+plt.show();
+
 #Correlation 
 #If pos corr as avg goes up, % goes up
 #If neg corr as avg goes up, % goes down

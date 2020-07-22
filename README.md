@@ -18,3 +18,6 @@
 - State testing data is in a large CSV file with over 2 million rows and about 30 columns such as: District code, School code, Grade, Percentage Standard Exceeded, Percentage Standard Met, Percentage Standard Nealy Met, Percentage Standard Not Met
 - There is an additional District and School CSV that will need to be merged in so I can identify Distict and School Names with their specific code
 - Teacher salary data will tell me for any particular district in California the lowest, average, and highest salary
+
+**Data Exploration**
+- Teacher Salary Grouped by County
