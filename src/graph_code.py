@@ -2,25 +2,36 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-from full_eda import *
 
-#Teacher Salary Graph
+
+#README Graph 1: Teacher Salary Graph
 salary_county = full.groupby('County Name').agg({'avg':'mean'}).reset_index().sort_values(by='avg')
+fontdict = {'fontname':'Helvetica', 'fontsize':20}
 
 fig, ax = plt.subplots(figsize= (18,9))
 ax.bar(salary_county['County Name'], salary_county['avg'], color = 'pink')
-ax.set_ylabel('Salary', fontdict={'fontname':'Helvetica', 'fontsize':20})
+ax.set_ylabel('Salary', fontdict=fontdict)
 ax.axhline(72590, linestyle ='--', color = 'purple')
+
 plt.xticks(rotation=90)
 plt.ylim(40000, 95000)
-plt.title('Average Teacher Salary By County', fontdict={'fontname':'Helvetica', 'fontsize':20})
-fig.tight_layout
+plt.title('Average Teacher Salary By County', fontdict=fontdict)
 plt.show();
 
-#Correlation 
-#If pos corr as avg goes up, % goes up
-#If neg corr as avg goes up, % goes down
+#----   README Graph 2: Scatter Salary %ELA
+
+
+#----   README Graph 3: Scatter Salary %Math
+
+
+
+#----   README GRAPH 4: Correlation map options below: 
+#correlation all of ela and math
 corrMatrix = (fullela.iloc[:, [7, 11]]).corr()
+sn.heatmap(corrMatrix, annot=True)
+plt.show()
+
+corrMatrix = (fullmath.iloc[:, [7, 11]]).corr()
 sn.heatmap(corrMatrix, annot=True)
 plt.show()
 
@@ -40,19 +51,12 @@ for i in range(1, 59):
 #make a PD series of county num and correlation
 corr_series = pd.Series(corr_list, index = range(1,59)).sort_values()
 
-#Look at top 5 and bottom 5
-for i in [20, 53, 44, 11, 25, 48, 42, 43, 31, 41]:
-    try:
-        temp_df = fullela[fullela['County Code'] == i][['avg','Met or Above']]
-        corrMatrix = temp_df.corr()
-        corr_list.append(corrMatrix.iloc[0, 1])
-        sn.heatmap(corrMatrix, annot=True)
-        plt.title(i)
-        plt.show()
-    except:
-        print("Bummer!!")
+#Look at top 5 and bottom 5: [20, 53, 44, 11, 25, 48, 42, 43, 31, 41]:
+
+
 
 """
+THROW AWAY CODE
 ##Attempt at side by side plot and salary
 sc_math = fullmath[fullmath['County Code'] == 43].sort_values(['avg'])
 sc_ela = fullela[fullela['County Code'] == 43].sort_values(['avg'])
