@@ -3,18 +3,18 @@
 **Topic:** 
 2019 statewide testing results and teacher salary for California
 
-**Questions to explore:** 
+**Questions to explore** 
 - Do districts with higher salary have higher test scores?
 - Which county in California has the highest average teacher salary?
 - Which county in California have the highest percentage of students meeting or exceeding standards?
 
-**Data sources:** 
+**Data sources** 
 - Three data sets were taken from California Department of Education
     1. Data set on all Smarter Balanced (SBAC) scores of students in both ELA and Math for the State of California
     2. Text file identifying the codes used in SBAC data to identify County, District, and School by name
     3. Data set on teacher salary by Districts in the state of California
 
-**Data description:** 
+**Data description** 
 - State testing data is in a large CSV file with over 2 million rows and over 30 columns such as: District code, School code, Grade, Percentage Standard Exceeded, Percentage Standard Met, Percentage Standard Nealy Met, Percentage Standard Not Met
 - There is an additional District and School CSV that identifies the County, Distict, and School Names with their specific code in the SBAC file
 - Teacher salary data reports the lowest, average, and highest reported salary by district in California
@@ -48,8 +48,9 @@
 
 ![title](images/cdf.png)
 
-<img src="images/correla.png" alt="raw" width=45% height=45%/>  <img src='images/corrmathpng.png' alt="raw" width=45% height=45%/>
 
+<img src="images/corrmathpng.png" alt="raw" width=50% height=50%/><img src="images/correla.png" alt="raw" width=50% height=50%/>
+<br>
 
 ![title](images/avgsalary.png)
 
