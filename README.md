@@ -50,5 +50,5 @@
 
 
 
-<img src="./images/avgsalary.png" alt="raw" width=50% height=50%/><img src="./images/percentmet.png" alt="raw" width=50% height=50%/>
+<img src="images/avgsalary.png" alt="raw" width=50% height=50%/><img src="images/percentmet.png" alt="raw" width=50% height=50%/>
 <br>
