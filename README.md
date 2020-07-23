@@ -49,9 +49,7 @@
 ![title](images/cdf.png)
 
 
-<img src="images/corrmathpng.png" alt="raw" width=50% height=50%/><img src="images/correla.png" alt="raw" width=50% height=50%/>
-<br>
-
-![title](images/avgsalary.png)
-
-![title](images/percentmet.png)
+<p float="left">
+  <img src="images/corrmathpng.png" width="250" />
+  <img src="images/correla.png" width="250" /> 
+</p>
