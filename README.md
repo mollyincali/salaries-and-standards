@@ -3,8 +3,10 @@
 **Topic:** 
 2019 statewide testing results and teacher salary for California
 
-**High-level description:** 
-- Explore statewide testing results from 2019 for students in grades 3 - 11 and teacher salary in California. Does a higher teacher salary increase the percentage of students who are able to met or exceed standards? Do counties with higher salary have higher test scores?
+**Questions to explore:** 
+- Do districts with higher salary have higher test scores?
+- Which county in California has the highest average teacher salary?
+- Which county in California have the highest percentage of students meeting or exceeding standards?
 
 **Data sources:** 
 - Three data sets were taken from California Department of Education

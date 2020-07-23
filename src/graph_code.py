@@ -3,52 +3,66 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sn
 
-#README Graph 1: Teacher Salary Graph
-# MAX avg salary
+fonttitle = {'fontname':'Helvetica', 'fontsize':25}
+fontaxis = {'fontname':'Helvetica', 'fontsize':18}
+blue_color = '#1f788b4'
+green_color = '#b2df8a'
+purple_color = '#8da0cb'
+
+#README Graph 1: Highest Avg Teacher Salary by County Graph
 salary_graph = full.groupby('County Name').agg({'Avg Salary':'max'})\
                     .reset_index()\
                     .sort_values(by='Avg Salary')\
                     .rename(columns={"Avg Salary": "Max Salary"})
 
-fontdict = {'fontname':'Helvetica', 'fontsize':20}
-
 fig, ax = plt.subplots(figsize= (18,9))
 ax.bar(salary_graph['County Name'], salary_graph['Max Salary'], color = '#b2df8a')
-ax.set_ylabel('Max Salary', fontdict=fontdict)
-ax.set_xlabel("County Name", fontdict=fontdict)
-ax.axhline(82746, linestyle ='--', linewidth=6, color = '#8da0cb')
-
+ax.set_ylabel('Highest Average Salary', fontdict=fontaxis)
+ax.set_xlabel("County Name", fontdict=fontaxis)
+ax.axhline(np.median(salary_graph['Max Salary']), linestyle ='--', linewidth=6, color = '#8da0cb')
 plt.xticks(rotation=90)
 plt.ylim(40000, 120000)
-plt.title('Max Teacher Salary in the County', fontdict=fontdict)
+plt.title('Highest Average Teacher Salary in the County', fontdict=fonttitle)
 plt.show();
 
-#----   README Graph 2: Scatter Salary vs Met
-fontdict = {'fontname':'Helvetica', 'fontsize':20}
+
+#----   README Graph 2: Scatter Salary vs Met for ALL
 fig, ax = plt.subplots(figsize= (18,9))
-ax.scatter(full['Avg Salary'], full['Met or Above'], color = '#8da0cb')
-plt.title('Does Higher Pay Create Success?', fontdict=fontdict)
-ax.set_ylabel('Students Who Met or Exceeded Standard', fontdict=fontdict)
-ax.set_xlabel("Average Teacher Salary", fontdict=fontdict)
+ax.scatter(full['Avg Salary'], full['Met or Above'], color = '#8da0cb', alpha = 0.3)
+plt.title('Does Higher Pay Create Success?', fontdict=fonttitle)
+ax.set_ylabel('All Students Who Met or Exceeded Standard', fontdict=fontaxis)
+ax.set_xlabel("Average Teacher Salary by District", fontdict=fontaxis)
 fig.tight_layout
 plt.show();
 
 
-#----   README Graph 3: Scatter Salary GROUPED by County vs Met
-#to not over aggregate data
-graph = full.groupby('Co').agg({'Students Prof':'sum', 'Avg Salary':'max', 'Students Tested':'sum'})
-
+#----   README Graph 3: Scatter Salary vs Met by District
+graph = full.groupby('District Name').agg({'Avg Salary':'max', 'Met or Above':'mean'})
 fig, ax = plt.subplots(figsize= (18,9))
-ax.scatter(graph['Avg Salary'], (graph['Students Prof'] / graph['Students Tested']), color = '#1f788bff', marker ='D')
-plt.title('Does Higher Pay Create Success?', fontdict=fontdict)
-ax.set_ylabel('Students Who Met or Exceeded Standard', fontdict=fontdict)
-ax.set_xlabel("Average Teacher Salary Grouped by County", fontdict=fontdict)
+ax.scatter(graph['Avg Salary'], graph['Met or Above'], color = blue_color, marker ='D')
+plt.title('Does Higher Pay Create Success?', fontdict=fonttitle)
+ax.set_ylabel('All Students Who Met or Exceeded Standard', fontdict=fontaxis)
+ax.set_xlabel("Average Teacher Salary by District", fontdict=fontaxis)
 fig.tight_layout
 plt.show();
+
 
 #----   README GRAPH 4 histograms:
+fig, ax = plt.subplots(1, 2, figsize = (15, 9))
 
+ax[0].hist(bottommath, alpha = .8, bins = 70, color = purple_color, label = 'Bottom paying districts')
+ax[0].hist(topmath, alpha = .6, bins = 70, color = green_color, label = 'Top paying districts')
+ax[0].legend(loc="upper left")
+ax[0].set_title(f'Percentage of students \n proficient or higher \n in Math by District', fontdict=fonttitle)
+ax[0].set_xlabel("Percent of Students", fontdict=fontaxis)
+ax[0].set_ylabel("Number of Students", fontdict=fontaxis);
 
+ax[1].hist(bottomela, alpha = .8, bins = 70, color = purple_color, label = 'Bottom paying districts')
+ax[1].hist(topela, alpha = .6, bins = 70, color = green_color, label = 'Top paying districts')
+ax[1].legend(loc="upper left")
+ax[1].set_title(f'Percentage of students \n proficient or higher \n in ELA by District', fontdict=fonttitle)
+ax[1].set_xlabel("Percent of Students", fontdict=fontaxis)
+ax[1].set_ylabel("Number of Students", fontdict=fontaxis);
 
 
 #----   README GRAPH 5 cdfs:
@@ -57,6 +71,12 @@ plt.show();
 
 
 
+#---    CHECK OUT?!
+for i in range(1, 59):
+        temp_df = full.groupby('Co').agg({'Avg Salary':'mean', 'Met or Above':'mean'}).sort_values(by='Avg Salary')
+        plt.scatter(temp_df['Avg Salary'], temp_df['Met or Above'])
+        plt.title(i)
+        plt.show()
 """
 THROW AWAY CODE
 #Correlation full avg and met or above
