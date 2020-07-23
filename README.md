@@ -48,10 +48,9 @@
 
 ![title](images/cdf.png)
 
-|                               |                                   |
-|-------------------------------|-----------------------------------|
-|![title](images/correla.png)   |![title](images/corrmathpng.png)   |
+<img src="images/correla.png" alt="raw" width=45% height=45%/>  <img src='images/corrmathpng.png' alt="raw" width=45% height=45%/>
 
-|                               |                                   |
-|-------------------------------|-----------------------------------|
-|![title](images/avgsalary.png) |![title](images/percentmet.png)    |
+
+![title](images/avgsalary.png)
+
+![title](images/percentmet.png)
