@@ -48,7 +48,7 @@
 
 ![title](images/cdf.png)
 
+<img src="https://github.com/mollyincali/teacher-pay/blob/master/images/avgsalary.png" width="400" height="350"><img src="https://github.com/mollyincali/teacher-pay/blob/master/images/percentmet.png" width="400" height="350">
 
 
-<img src="images/avgsalary.png" alt="raw" width=50% height=50%/><img src="images/percentmet.png" alt="raw" width=50% height=50%/>
-<br>
+<img src="https://github.com/mollyincali/teacher-pay/blob/master/images/correla.png" width="400" height="350"><img src="https://github.com/mollyincali/teacher-pay/blob/master/images/corrmathpng.png" width="400" height="350">
