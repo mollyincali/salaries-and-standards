@@ -2,25 +2,23 @@ import pandas as pd
 import seaborn as sn
 import matplotlib.pyplot as plt
 
-#--- R using Pandas
-full['Met or Above'].corr(full['avg'])
+fullela = full[full['Test Id'] == 1]
+fullmath = full[full['Test Id'] == 2]
 
+top = fullela[fullela['Avg Salary'] > fullela['Avg Salary'].mean()]['Met or Above']
+bottom = fullela[fullela['Avg Salary'] <= fullela['Avg Salary'].mean()]['Met or Above']
+stats.ttest_ind(top,bottom)
 
-#--- R using Pandas by county
-r = []
-for i in range(1, 59):
-    temp_df = full[full['Co'] == i][['avg','Met or Above']]
-    temp_r = temp_df['Met or Above'].corr(temp_df['avg'])
-    r.append([i, temp_r])
+plt.hist(top, alpha = .5, bins = 1000)
+plt.hist(bottom, alpha = .5, bins = 1000);
 
-r_df = pd.DataFrame(r, columns = ['Co', 'r']).sort_values(by = 'r').dropna()
+def cdf(value, array):
+    return (array<value).sum()/len(array)
 
+vcdf = np.vectorize(cdf, excluded = ['array'])
+top_cdf = vcdf(value = top, array = top)
+bottom_cdf = vcdf(value = bottom, array = bottom)
+plt.scatter(top, top_cdf, marker = '.')
+plt.scatter(bottom, bottom_cdf, marker = '.')
 
-
-#---- THROW AWAY?
-# #pearsonr test return pearson's correlation, p-value
-# from scipy import stats
-# x = np.array(temp['avg'])
-# y = np.array(temp['Met or Above'])
-
-# stats.pearsonr(x, y)
+top.mean(), bottom.mean()
