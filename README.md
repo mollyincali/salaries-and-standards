@@ -18,11 +18,11 @@
 - Teacher salary data reports the lowest, average, and highest reported salary by district in California
 
 **Data Exploration**
-- Teacher Salary Grouped by County
+- The highest average salary offered in that County
 ![title](images/salary_bycounty.png)
 
-- Teacher Salary vs Percent of Students met or above
+- Lets look at the average teacher salary vs the percentage of students who met or exceeded standard
 ![title](images/scatterpay_met.png)
 
-- Teacher Salary Grouped by County vs Percent of Students met or above
+- The above graph is alot! Lets look at the WHOLE county and highlight the highest average salary for that county, and see how that compares to the percentage of students who met or exceeded standard
 ![title](images/scatterpaybycounty.png)
