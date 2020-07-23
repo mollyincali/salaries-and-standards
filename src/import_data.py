@@ -55,5 +55,9 @@ full = pd.merge(district_sbac, teacher, how = 'inner', on = 'District Name')
 full = full[['County Name', 'Co', 'District Name', 'District Code', 'Grade', 
             'Test Id', 'Students Tested', 'Met or Above', 'Avg Salary']].reset_index()
 
+#Adding column
+full['Students Prof'] = full['Students Tested'] * (full['Met or Above'] / 100)
+
+#Creating ela and math df
 fullela = full[full['Test Id'] == 1]
 fullmath = full[full['Test Id'] == 2]

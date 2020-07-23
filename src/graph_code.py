@@ -4,6 +4,7 @@ import numpy as np
 import seaborn as sn
 
 #README Graph 1: Teacher Salary Graph
+# MAX avg salary
 salary_graph = full.groupby('County Name').agg({'Avg Salary':'max'})\
                     .reset_index()\
                     .sort_values(by='Avg Salary')\
@@ -25,7 +26,7 @@ plt.show();
 #----   README Graph 2: Scatter Salary vs Met
 fontdict = {'fontname':'Helvetica', 'fontsize':20}
 fig, ax = plt.subplots(figsize= (18,9))
-ax.scatter(full['avg'], full['Met or Above'], color = '#8da0cb')
+ax.scatter(full['Avg Salary'], full['Met or Above'], color = '#8da0cb')
 plt.title('Does Higher Pay Create Success?', fontdict=fontdict)
 ax.set_ylabel('Students Who Met or Exceeded Standard', fontdict=fontdict)
 ax.set_xlabel("Average Teacher Salary", fontdict=fontdict)
@@ -35,7 +36,6 @@ plt.show();
 
 #----   README Graph 3: Scatter Salary GROUPED by County vs Met
 #to not over aggregate data
-full['Students Prof'] = full['Students Tested'] * (full['Met or Above'] / 100)
 graph = full.groupby('Co').agg({'Students Prof':'sum', 'Avg Salary':'max', 'Students Tested':'sum'})
 
 fig, ax = plt.subplots(figsize= (18,9))
@@ -46,7 +46,12 @@ ax.set_xlabel("Average Teacher Salary Grouped by County", fontdict=fontdict)
 fig.tight_layout
 plt.show();
 
-#----   README GRAPH 4:
+#----   README GRAPH 4 histograms:
+
+
+
+
+#----   README GRAPH 5 cdfs:
 
 
 
