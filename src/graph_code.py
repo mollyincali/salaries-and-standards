@@ -4,19 +4,22 @@ import numpy as np
 import seaborn as sn
 
 #README Graph 1: Teacher Salary Graph
-salary_county = full.groupby('County Name').agg({'avg':'mean'}).reset_index().sort_values(by='avg')
+salary_graph = full.groupby('County Name').agg({'Avg Salary':'max'})\
+                    .reset_index()\
+                    .sort_values(by='Avg Salary')\
+                    .rename(columns={"Avg Salary": "Max Salary"})
+
 fontdict = {'fontname':'Helvetica', 'fontsize':20}
 
 fig, ax = plt.subplots(figsize= (18,9))
-ax.bar(salary_county['County Name'], salary_county['avg'], color = '#b2df8a')
-ax.set_ylabel('Salary', fontdict=fontdict)
+ax.bar(salary_graph['County Name'], salary_graph['Max Salary'], color = '#b2df8a')
+ax.set_ylabel('Max Salary', fontdict=fontdict)
 ax.set_xlabel("County Name", fontdict=fontdict)
-ax.axhline(np.mean(salary_county['avg']), linestyle ='--', linewidth=6, color = '#8da0cb')
-ax.axhline(np.median(salary_county['avg']), linestyle ='--', linewidth=6, color = '#1f788bff')
+ax.axhline(82746, linestyle ='--', linewidth=6, color = '#8da0cb')
 
 plt.xticks(rotation=90)
-plt.ylim(40000, 95000)
-plt.title('Average Teacher Salary By County', fontdict=fontdict)
+plt.ylim(40000, 120000)
+plt.title('Max Teacher Salary in the County', fontdict=fontdict)
 plt.show();
 
 #----   README Graph 2: Scatter Salary vs Met

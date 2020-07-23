@@ -6,18 +6,16 @@
 **High-level description:** 
 - Explore statewide testing results from 2019 for students in grades 3 - 11 and teacher salary in California. My wondering is if there is a relationship between teacher salary and the percentage of students who score proficient or higher.
 
-- If time allows, I would like to also bring in healthy kid survey results to see if those districts with the highest percentage of students meeting standards, and well-paid teachers have students who feel connected to the school.
-
 **Data sources:** 
 - Three data sets all taken from California Department of Education
-    1. Data set on all SBAC scores of students for the State of California
-    2. Text file identifying the codes used in SBAC for County, District, and School names
+    1. Data set on all Smarter Balanced scores of students in both ELA and Math for the State of California
+    2. Text file identifying the codes used in SBAC data to identify County, District, and School by name
     3. Data set on teacher salary by Districts in the state of California
 
 **Data description:** 
 - State testing data is in a large CSV file with over 2 million rows and about 30 columns such as: District code, School code, Grade, Percentage Standard Exceeded, Percentage Standard Met, Percentage Standard Nealy Met, Percentage Standard Not Met
-- There is an additional District and School CSV that will need to be merged in so I can identify Distict and School Names with their specific code
-- Teacher salary data will tell me for any particular district in California the lowest, average, and highest salary
+- There is an additional District and School CSV that identifies the County, Distict, and School Names with their specific code in the SBAC file
+- Teacher salary data reports the lowest, average, and highest reported salary by district in California
 
 **Data Exploration**
 - Teacher Salary Grouped by County
@@ -25,3 +23,6 @@
 
 - Teacher Salary vs Percent of Students met or above
 ![title](images/scatterpay_met.png)
+
+- Teacher Salary Grouped by County vs Percent of Students met or above
+![title](images/scatterpaybycounty.png)
