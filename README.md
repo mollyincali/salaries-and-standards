@@ -48,10 +48,10 @@
 
 ![title](images/cdf.png)
 
-![title](images/correla.png)
+|                               |                                   |
+|-------------------------------|-----------------------------------|
+|![title](images/correla.png)   |![title](images/corrmathpng.png)   |
 
-![title](images/corrmathpng.png)
-
-![title](images/avgsalary.png) 
-
-![title](images/percentmet.png)
+|                               |                                   |
+|-------------------------------|-----------------------------------|
+|![title](images/avgsalary.png) |![title](images/percentmet.png)    |
