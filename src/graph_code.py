@@ -1,57 +1,51 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-
-
+import seaborn as sn
 
 #README Graph 1: Teacher Salary Graph
 salary_county = full.groupby('County Name').agg({'avg':'mean'}).reset_index().sort_values(by='avg')
 fontdict = {'fontname':'Helvetica', 'fontsize':20}
 
 fig, ax = plt.subplots(figsize= (18,9))
-ax.bar(salary_county['County Name'], salary_county['avg'], color = 'pink')
+ax.bar(salary_county['County Name'], salary_county['avg'], color = '#b2df8a')
 ax.set_ylabel('Salary', fontdict=fontdict)
-ax.axhline(72590, linestyle ='--', color = 'purple')
+ax.set_xlabel("County Name", fontdict=fontdict)
+ax.axhline(np.mean(salary_county['avg']), linestyle ='--', linewidth=6, color = '#8da0cb')
+ax.axhline(np.median(salary_county['avg']), linestyle ='--', linewidth=6, color = '#1f788bff')
 
 plt.xticks(rotation=90)
 plt.ylim(40000, 95000)
 plt.title('Average Teacher Salary By County', fontdict=fontdict)
 plt.show();
 
-#----   README Graph 2: Scatter Salary %ELA
+#----   README Graph 2: Scatter Salary vs Met
+fontdict = {'fontname':'Helvetica', 'fontsize':20}
+fig, ax = plt.subplots(figsize= (18,9))
+ax.scatter(full['avg'], full['Met or Above'], color = '#8da0cb')
+plt.title('Does Higher Pay Equal Better Success?', fontdict=fontdict)
+ax.set_ylabel('Students Who Met or Exceeded Standard', fontdict=fontdict)
+ax.set_xlabel("Average Teacher Salary", fontdict=fontdict)
+fig.tight_layout
+plt.show();
 
 
-#----   README Graph 3: Scatter Salary %Math
+#----   README Graph 3: Scatter Salary GROUPED by County vs Met
+by_county = full.groupby('Co').agg({'Met or Above':'mean', 'avg':'mean'}).reset_index()
+fig, ax = plt.subplots(figsize= (18,9))
+ax.scatter(by_county['avg'], by_county['Met or Above'], color = '#1f788bff', marker ='D')
+plt.title('Does Higher Pay Equal Better Success?', fontdict=fontdict)
+ax.set_ylabel('Students Who Met or Exceeded Standard', fontdict=fontdict)
+ax.set_xlabel("Average Teacher Salary Grouped by County", fontdict=fontdict)
+fig.tight_layout
+plt.show();
 
+#----   README GRAPH 4:
+#Correlation full avg and met or above
+temp_df = full[['avg','Met or Above']]
+corrMatrix = temp_df.corr()
+sns.heatmap(corrMatrix, annot=True, vmin=-0.85, vmax=0.85, cmap='PRGn');
 
-
-#----   README GRAPH 4: Correlation map options below: 
-#correlation all of ela and math
-corrMatrix = (fullela.iloc[:, [7, 11]]).corr()
-sn.heatmap(corrMatrix, annot=True)
-plt.show()
-
-corrMatrix = (fullmath.iloc[:, [7, 11]]).corr()
-sn.heatmap(corrMatrix, annot=True)
-plt.show()
-
-#COORELATION DATA all counties
-corr_list = []
-for i in range(1, 59):
-    try:
-        temp_df = fullela[fullela['County Code'] == i][['avg','Met or Above']]
-        corrMatrix = temp_df.corr()
-        corr_list.append(corrMatrix.iloc[0, 1])
-        sn.heatmap(corrMatrix, annot=True)
-        plt.title(i)
-        plt.show()
-    except:
-        print("Bummer!!")
-
-#make a PD series of county num and correlation
-corr_series = pd.Series(corr_list, index = range(1,59)).sort_values()
-
-#Look at top 5 and bottom 5: [20, 53, 44, 11, 25, 48, 42, 43, 31, 41]:
 
 
 
