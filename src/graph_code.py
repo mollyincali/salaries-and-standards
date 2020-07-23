@@ -26,7 +26,7 @@ plt.show();
 fontdict = {'fontname':'Helvetica', 'fontsize':20}
 fig, ax = plt.subplots(figsize= (18,9))
 ax.scatter(full['avg'], full['Met or Above'], color = '#8da0cb')
-plt.title('Does Higher Pay Equal Better Success?', fontdict=fontdict)
+plt.title('Does Higher Pay Create Success?', fontdict=fontdict)
 ax.set_ylabel('Students Who Met or Exceeded Standard', fontdict=fontdict)
 ax.set_xlabel("Average Teacher Salary", fontdict=fontdict)
 fig.tight_layout
@@ -34,26 +34,31 @@ plt.show();
 
 
 #----   README Graph 3: Scatter Salary GROUPED by County vs Met
-by_county = full.groupby('Co').agg({'Met or Above':'mean', 'avg':'mean'}).reset_index()
+#to not over aggregate data
+full['Students Prof'] = full['Students Tested'] * (full['Met or Above'] / 100)
+graph = full.groupby('Co').agg({'Students Prof':'sum', 'Avg Salary':'max', 'Students Tested':'sum'})
+
 fig, ax = plt.subplots(figsize= (18,9))
-ax.scatter(by_county['avg'], by_county['Met or Above'], color = '#1f788bff', marker ='D')
-plt.title('Does Higher Pay Equal Better Success?', fontdict=fontdict)
+ax.scatter(graph['Avg Salary'], (graph['Students Prof'] / graph['Students Tested']), color = '#1f788bff', marker ='D')
+plt.title('Does Higher Pay Create Success?', fontdict=fontdict)
 ax.set_ylabel('Students Who Met or Exceeded Standard', fontdict=fontdict)
 ax.set_xlabel("Average Teacher Salary Grouped by County", fontdict=fontdict)
 fig.tight_layout
 plt.show();
 
 #----   README GRAPH 4:
-#Correlation full avg and met or above
-temp_df = full[['avg','Met or Above']]
-corrMatrix = temp_df.corr()
-sns.heatmap(corrMatrix, annot=True, vmin=-0.85, vmax=0.85, cmap='PRGn');
+
 
 
 
 
 """
 THROW AWAY CODE
+#Correlation full avg and met or above
+temp_df = full[['avg','Met or Above']]
+corrMatrix = temp_df.corr()
+sns.heatmap(corrMatrix, annot=True, vmin=-0.85, vmax=0.85, cmap='PRGn');
+#------------------
 ##Attempt at side by side plot and salary
 sc_math = fullmath[fullmath['County Code'] == 43].sort_values(['avg'])
 sc_ela = fullela[fullela['County Code'] == 43].sort_values(['avg'])
@@ -82,9 +87,7 @@ ax2.tick_params(axis='y', labelcolor=color)
 
 fig.tight_layout() 
 plt.show()
-"""
 #------------------
-"""
 ## Graph with bar chart of salary and dots of % proficient NOT GOOD
 sc_3math = full3math[full3math['County Code'] == 43].sort_values(['avg'])
 sc_3ela = full3ela[full3ela['County Code'] == 43].sort_values(['avg'])

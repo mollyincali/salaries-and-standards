@@ -52,5 +52,8 @@ teacher = pd.concat([teacher, teacher2]).drop_duplicates()
 #---- FULL & FINAL DATA FRAME
 # full = district_sbac.reset_index().set_index('District Name').join(teacher, how = 'inner')
 full = pd.merge(district_sbac, teacher, how = 'inner', on = 'District Name')
-full = full[['District Code', 'District Name', 'County Name', 'Co', 'Grade', 
+full = full[['County Name', 'Co', 'District Name', 'District Code', 'Grade', 
             'Test Id', 'Students Tested', 'Met or Above', 'Avg Salary']].reset_index()
+
+fullela = full[full['Test Id'] == 1]
+fullmath = full[full['Test Id'] == 2]
