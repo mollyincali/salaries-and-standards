@@ -27,7 +27,7 @@
 **Data Exploration**
 - Since we do not want to over aggregate our data, so lets look at each District in each County and find the highest average salary offered in that County
 
-![title](images/salary_bycounty.png)
+![title](images/maxsalarycounty.png)
 
 - We can look at each district's average teacher salary vs the percentage of students who met or exceeded standard in that same district
 
@@ -48,5 +48,10 @@
 
 ![title](images/cdf.png)
 
-- Lets look at the correlation
+![title](images/correla.png)
 
+![title](images/corrmathpng.png)
+
+![title](images/avgsalary.png) 
+
+![title](images/percentmet.png)

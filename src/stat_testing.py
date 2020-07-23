@@ -3,8 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats as stats
 
-from import_data import *
-
 #p value ELA = 5.4839 e-64
 topela = fullela[fullela['Avg Salary'] > fullela['Avg Salary'].median()]['Met or Above']
 bottomela = fullela[fullela['Avg Salary'] <= fullela['Avg Salary'].median()]['Met or Above']

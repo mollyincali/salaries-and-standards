@@ -2,6 +2,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sn
+import folium
+
+from import_data import *
 
 fonttitle = {'fontname':'Helvetica', 'fontsize':25}
 fontaxis = {'fontname':'Helvetica', 'fontsize':18}
@@ -16,10 +19,10 @@ salary_graph = full.groupby('County Name').agg({'Avg Salary':'max'})\
                     .rename(columns={"Avg Salary": "Max Salary"})
 
 fig, ax = plt.subplots(figsize= (18,9))
-ax.bar(salary_graph['County Name'], salary_graph['Max Salary'], color = '#b2df8a')
+ax.bar(salary_graph['County Name'], salary_graph['Max Salary'], color = blue_color)
 ax.set_ylabel('Highest Average Salary', fontdict=fontaxis)
 ax.set_xlabel("County Name", fontdict=fontaxis)
-ax.axhline(np.median(salary_graph['Max Salary']), linestyle ='--', linewidth=6, color = '#8da0cb')
+ax.axhline(np.median(salary_graph['Max Salary']), linestyle ='--', linewidth=6, color = purple_color)
 plt.xticks(rotation=90)
 plt.ylim(40000, 120000)
 plt.title('Highest Average Teacher Salary in the County', fontdict=fonttitle)
@@ -28,7 +31,7 @@ plt.show();
 
 #----   README Graph 2: Scatter ALL Salary vs ALL Met
 fig, ax = plt.subplots(figsize= (18,9))
-ax.scatter(full['Avg Salary'], full['Met or Above'], color = '#8da0cb', alpha = 0.3)
+ax.scatter(full['Avg Salary'], full['Met or Above'], color = blue_color, alpha = 0.3)
 plt.title('Does Higher Pay Create Success?', fontdict=fonttitle)
 ax.set_ylabel('All Students Who Met or Exceeded Standard', fontdict=fontaxis)
 ax.set_xlabel("Average Teacher Salary by District", fontdict=fontaxis)
