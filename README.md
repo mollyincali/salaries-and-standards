@@ -25,11 +25,28 @@
 - Students with special needs will take a modified version, and are not accounted for in this analysis
 
 **Data Exploration**
-- Which county offers the highest average salary?
+- Since we do not want to over aggregate our data, so lets look at each District in each County and find the highest average salary offered in that County
+
 ![title](images/salary_bycounty.png)
 
-- Lets look at each district's average teacher salary vs the percentage of students who met or exceeded standard in that same district
+- We can look at each district's average teacher salary vs the percentage of students who met or exceeded standard in that same district
+
 ![title](images/scatterpay_met.png)
 
-- The above graph is alot - in fact, it is over 8,000 dots! Lets look at each county individually and see how the highest average salary compares to the percentage of students who met or exceeded standard for the whole county
-![title](images/scatterpaybycounty.png)
+- The above graph is alot - in fact, it is over 8,000 dots! Lets look at each District individually and see how that District's average salary compares to the percentage of students who met or exceeded standard for the whole county
+
+![title](images/scatterpaybydistrict.png)
+
+- ttest results
+*image 
+
+- Lets seperate out the top paying districts from the bottom paying districts by splitting them at the Median and see how their students perform on both ELA and Math tests
+
+![title](images/histbytopbottom.png)
+
+- Lets look at difference between the top half paying districts and the bottom half paying districts CDF for both ELA and Maths
+
+![title](images/cdf.png)
+
+- Lets look at the correlation
+
