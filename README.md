@@ -23,7 +23,7 @@
 
 **Data Exploration**
 
-- We will begin by looking at the money. 700 District salaries is a lot of for one bar chart, so lets look at each District in each County and find the highest average salary offered in that County. You'll find the median salary running across the middle of the graph so we can see which Counties fall above or below that line.
+- We will begin by looking at the money. 700 District salaries is a lot of information for one bar chart, so lets look at each District in each County and find the highest average salary offered in that County. You'll find the median salary running across the middle of the graph so we can see which Counties fall above or below that line.
 
 ![title](images/salary_bycounty.png)
 
@@ -79,9 +79,7 @@
 
 **Conclusion**
 - Yes, we want our students to be able to read, write and perserver though difficult math problems. It has been shown above that there is a lot of work that needs to be done to ensure our students are meeting standards for their grade level. 
-- We also need to ensure that adults are entering the educational career field. Teacher should feel respected and appreciated for the hard work that it takes to do their job. 
-- It has been shown that students from higher paying Districts perform better, so let's increase teacher salary!
 
-- Those top paying Districts most likely offer a larger variety of instruction (like music, art, and specialized classes), on campus clubs, and spend money on building their campus community and culture. All of which we know can help support the whole child.
+- For Districts who want higher test scores, paying teachers more may pay off. However it will take more than just that. Those top paying Districts most likely offer a larger variety of instruction (like music, art, and specialized classes), on campus clubs, and spend money on building their campus community and culture. All of which we know can help support the whole child.
 
 - Teachers make a difference, and the positive ways they can impact our lives go beyond test scores.
