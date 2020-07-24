@@ -80,6 +80,6 @@
 **Conclusion**
 - Yes, we want our students to be able to read, write and perserver though difficult math problems. It has been shown above that there is a lot of work that needs to be done to ensure our students are meeting standards for their grade level. 
 
-- For Districts who want higher test scores, paying teachers more may pay off. However it will take more than just that. Those top paying Districts most likely offer a larger variety of instruction (like music, art, and specialized classes), on campus clubs, and spend money on building their campus community and culture. All of which we know can help support the whole child.
+- For Districts who want higher test scores, paying teachers more may pay off but it will take more than just that. Those top paying Districts most likely offer a larger variety of instruction (like music, art, and specialized classes), on campus clubs, and spend money on building their campus community and culture. All of which we know can help support the whole child.
 
 - Teachers make a difference, and the positive ways they can impact our lives go beyond test scores.
