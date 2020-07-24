@@ -42,6 +42,12 @@
 
 ![title](images/salary_bycounty.png)
 
+- There is a large difference between the top 4 counties and the bottom 4 counties. Lets take a closer look at those specific districts in those counties.
+
+![title](images/topcounties.png)
+
+![title](images/bottomcounties.png)
+
 - Now let's at a look at each district's average teacher salary vs the percentage of students who met or exceeded standard in that same district.
 
 ![title](images/scatterpay_met.png)
@@ -56,7 +62,7 @@
 
 <img src="https://github.com/mollyincali/teacher-pay/blob/master/images/corrmathpng.png" width="400" height="350"><img src="https://github.com/mollyincali/teacher-pay/blob/master/images/correla.png" width="400" height="350">
 
-- This tells us that ...
+- This tells us that yes there is a correlation between salary and test scores.
 
 - Great! Now that we have our student scores seperated out by ELA and Math let's get to our main question. **Do students from top paying districts score the same or better than students who attend lower paying districts?**
 
@@ -73,7 +79,7 @@
 
 *Students from top paying districts DO score better than students from lower paying districts.* 
 
-- Lets visualize the spread
+- Lets visualize the spread of top paying districts and bottom paying districts by each subject test.
 
 ![title](images/histbytopbottom.png)
 
