@@ -48,7 +48,10 @@
 
 ![title](images/cdf.png)
 
+- Correlation heat map
+
+<img src="https://github.com/mollyincali/teacher-pay/blob/master/images/corrmathpng.png" width="400" height="350"><img src="https://github.com/mollyincali/teacher-pay/blob/master/images/correla.png" width="400" height="350">
+
+-Cholorpleth map
+
 <img src="https://github.com/mollyincali/teacher-pay/blob/master/images/avgsalary.png" width="400" height="350"><img src="https://github.com/mollyincali/teacher-pay/blob/master/images/percentmet.png" width="400" height="350">
-
-
-<img src="https://github.com/mollyincali/teacher-pay/blob/master/images/correla.png" width="400" height="350"><img src="https://github.com/mollyincali/teacher-pay/blob/master/images/corrmathpng.png" width="400" height="350">
