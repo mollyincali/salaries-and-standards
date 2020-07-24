@@ -42,7 +42,7 @@
 
 ![title](images/salary_bycounty.png)
 
-- There is a large difference between the top 4 Counties and the bottom 4 Counties. Lets take a closer look at those specific Districts in those Counties.
+- There is a large difference between the top 4 Counties and the bottom 4 Counties. Lets take a closer look at those specific Counites and their respective Districts.
 
 ![title](images/2topcounties.png)
 
@@ -52,7 +52,7 @@
 
 ![title](images/scatterpay_met.png)
 
-- The above graph is alot - in fact, it is over 8,000 dots since we were looking at every school. Lets group each School together by their District and look at them individually and see how that District's average salary compares to the percentage of students who met or exceeded standard for the whole County. 
+- The above graph is alot - in fact, it is over 8,000 dots since we were looking at every school. Lets group each School together by their District and look at them individually and see how that District's average salary compares to the percentage of students who met or exceeded standard for the whole District. 
 
 ![title](images/scatterpaybydistrict.png)
 
@@ -83,7 +83,7 @@
 
 ![title](images/histbytopbottom.png)
 
-- Lets look at just one more graph to really hit this idea home. The cumulative distribution function (CDF) of each test comparing the top and lower paying Districts. 
+- Lets look at just one more graph to really hit this idea home. The cumulative distribution function (CDF) of each test comparing the top and bottom paying Districts. 
 
 ![title](images/cdf.png)
 
