@@ -69,4 +69,39 @@ ax[1].set_ylabel("Number of Students", fontdict=fontaxis)
 # plt.show();
 
 
+#----       CHOROPLETH GRAPH
+def make_choromap(df, county_col, col, title):
+    choroMap = folium.Map(location=(36.78,-119.42), zoom_start=6) 
+    choroMap.choropleth(geo_data='data/california_counties.geojson',
+                    data = df,
+                    columns = [county_col, col],
+                    key_on = 'feature.properties.name',
+                    fill_color = 'Greens',
+                    fill_opacity = 0.9,
+                    line_opacity = 0.2,
+                    legend_name = title)
+    return choroMap
+
+
+#----       CORRELATION HEATMAP GRAPH
+def make_heatmap(df, test):
+    """
+    Parameters:
+        df = dataframe that will compare Avg Salary to Met or Above
+        test = which test
+
+    Returns:
+        new df with selected columns titles
+    """
+    fig, ax = plt.subplots(figsize = (5, 5))
+    temp_df = df[['Avg Salary','Met or Above']]
+    corrMatrix = temp_df.corr()
+    sns.heatmap(corrMatrix, annot=True, vmin=-1, vmax=1, cmap = 'Purples')
+    plt.title(f'Correlation Heatmap \n Avg Teacher Salary vs Percentage Met or Exceeded \n {test} Test')
+    plt.show();
+
+    
 if __name__ == "__main__":
+    make_cdf(topela, bottomela, 'ELA', topmath, bottommath, 'Math')
+    make_heatmap(fullmath, 'Math')
+    make_heatmap(fullela, 'ELA')
