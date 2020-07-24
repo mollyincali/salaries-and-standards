@@ -1,7 +1,7 @@
-# Capstone 1
+# Salaries and Standards
 
 **Topic:** 
-2019 statewide testing results and teacher salary for California
+2019 statewide testing results for students and teacher salary for California
 
 **Questions to explore** 
 - Do districts with higher salary have higher test scores?
@@ -22,22 +22,22 @@
 **Common Terms**
 - There are 58 Counties in California with over 900 Districts. Each District has their own number of schools and serve anywhere between 596,937 (Los Angeles Unified) to 4 students (Panoche Elementary)
 - Students in grade 3 - 8 and 11 will take both the ELA and Math SBAC (Smarter Balanced Assessment Consortium)
-- Students with special needs will take a modified version, and are not accounted for in this analysis
+- Some students with special needs will take a modified version, and are not accounted for in this analysis
 
 **Data Exploration**
-- Since we do not want to over aggregate our data, so lets look at each District in each County and find the highest average salary offered in that County
+- We will begin by looking at money. 700 district salaries is a lot of for one bar chart, so lets look at each District in each County and find the highest average salary offered in that County. You'll find the median salary running across the middle of the graph so we can see which counties fall above or below that line.
 
-![title](images/maxsalarycounty.png)
+![title](images/salary_bycounty.png)
 
-- We can look at each district's average teacher salary vs the percentage of students who met or exceeded standard in that same district
+- Now let's at a look at each district's average teacher salary vs the percentage of students who met or exceeded standard in that same district.
 
 ![title](images/scatterpay_met.png)
 
-- The above graph is alot - in fact, it is over 8,000 dots! Lets look at each District individually and see how that District's average salary compares to the percentage of students who met or exceeded standard for the whole county
+- The above graph is alot - in fact, it is over 8,000 dots! Lets group each District and look at them individually and see how that District's average salary compares to the percentage of students who met or exceeded standard for the whole county. 
 
 ![title](images/scatterpaybydistrict.png)
 
-- ttest results
+- After examining this graph you can see that as we move along the x-axis the scores do increase, to better understand the correlation  but I'm wondering how much it will change and 
 *image 
 
 - Lets seperate out the top paying districts from the bottom paying districts by splitting them at the Median and see how their students perform on both ELA and Math tests
