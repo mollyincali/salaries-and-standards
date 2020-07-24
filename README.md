@@ -24,6 +24,7 @@
     - Standard nearly met
     - Standard not Met
 - For the purpose of this data exploration we are only interested in students who fall into the "exceed" or "met" category. 
+- The terms "proficient" and "standards met" are interchangeable 
 - Teacher salary data reports aggregated data on the lowest, average, and highest reported salary for each district in California
 - Teacher salary data only matches up to the SBAC data by District Name, which can take on many forms. 
 
@@ -83,6 +84,8 @@ The above graph is alot - in fact, it is over 8,000 dots! Lets group each Distri
 
 ![title](images/cdf.png)
 
--Cholorpleth map
+- Okay one last graph, saved the best for last!
 
 <img src="https://github.com/mollyincali/teacher-pay/blob/master/images/avgsalary.png" width="400" height="350"><img src="https://github.com/mollyincali/teacher-pay/blob/master/images/percentmet.png" width="400" height="350">
+
+**Conclusion**
