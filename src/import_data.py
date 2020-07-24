@@ -5,7 +5,7 @@ import numpy as np
 #---- SBAC DATA
 # Drop * values, choose "all student" subgroup, disregard students > grade 11
 # Look at entire district with School code 0
-sbac = pd.read_csv("./data/sb_ca2019_all_csv_v4.txt")
+sbac = pd.read_csv("../data/sb_ca2019_all_csv_v4.txt")
 sbac = sbac[sbac['Percentage Standard Met and Above'] != '*']
 sbac = sbac[sbac['Subgroup ID'] == 1]
 sbac = sbac[sbac['Grade'] <= 11]
@@ -20,7 +20,7 @@ sbac = sbac[['County Code', 'District Code', 'Grade',
              'Test Id', 'Students Tested', 'Met or Above']].drop_duplicates()
 
 #---- DISTRICT CODES
-district = pd.read_csv("./data/districts.csv")
+district = pd.read_csv("../data/districts.csv")
 district = district[['County Code', 'County Name', 
                      'District Code', 'District Name']].drop_duplicates()
 
@@ -29,7 +29,7 @@ district_sbac = pd.merge(district, sbac, how = 'inner', on = 'District Code')
 
 
 #---- TEACHER CODES
-teacher = pd.read_csv("./data/salary.csv")
+teacher = pd.read_csv("../data/salary.csv")
 teacher["Avg Salary"] = teacher['Average Salary Paid'].str.replace(',','').astype(float)
 
 # Change column name so we can merge with district_sbac table
