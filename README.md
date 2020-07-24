@@ -2,38 +2,24 @@
 
 ***Do students from top paying districts score the same as students who attend lower paying Districts?***
 
-**Questions to explore**
+**Questions to Explore**
 - Do districts with higher salary have higher test scores?
 - Which County in California has the highest average teacher salary?
 - Which County in California has the highest percentage of students meeting or exceeding standards?
 
-**Data sources** 
-- Three data sets were taken from California Department of Education from the 2018 - 19 school year.
-    1. Data set on all Smarter Balanced (SBAC) scores of students in both ELA and Math for the State of California
-    2. Text file identifying the codes used in SBAC data to identify County, District, and School by name
-    3. Data set on teacher salary by Districts in the state of California
+**Data Sources** 
+1. Data set on all Smarter Balanced (SBAC) scores of students in both ELA and Math for the State of California in the school year 2018 - 19 
+- This large CSV file with over 2 million rows and over 30 columns such as: District code, School code, Grade, Percentage Standard Met, Percentage Standard Nearly Met, Area proficiency, etc.
+2. Text file identifying the codes used in SBAC data to identify County, District, and School by name
+- This file identifies the County, Distict, and School Names with their specific code in the SBAC file
+3. Data set on teacher salary by Districts in the state of California
+- This file contains teacher salary data reports aggregated data on the lowest, average, and highest reported salary for each District in California
 
 ![title](images/infographic.png)
 
-**Data description** 
-- State testing data is in a large CSV file with over 2 million rows and over 30 columns such as: District code, School code, Grade, Percentage Standard Met, Percentage Standard Nearly Met, Area proficiency, etc.
-- There is an additional District and School CSV that identifies the County, Distict, and School Names with their specific code in the SBAC file
-- Students scores will fall into one of four groups: 
-    - Standard exceeded
-    - Standard met
-    - Standard nearly met
-    - Standard not met
-- For the purpose of this data exploration we are only interested in students who fall into the "exceed" or "met" category.  
-- Teacher salary data reports aggregated data on the lowest, average, and highest reported salary for each District in California
-- Teacher salary data only matches up to the SBAC data by District Name, which can take on many forms. 
-
-**Common Terms**
+**Important Things to Know**
 - Counties ---> Districts --> Schools
-- There are 58 Counties in California with over 900 Districts and each District has their own number of schools
-- The largest District is Los Angeles Unified serving 596,937 students
-- There are at least 10 Districts serving 10 or fewer students
 - Students in grade 3 - 8 and 11 will take both the ELA and Math SBAC (Smarter Balanced Assessment Consortium)
-- The terms "proficient" and "standards met" are interchangeable
 
 **Data Exploration**
 
