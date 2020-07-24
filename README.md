@@ -44,11 +44,11 @@
 
 - There is a large difference between the top 4 counties and the bottom 4 counties. Lets take a closer look at those specific districts in those counties.
 
-![title](images/topcounties.png)
+![title](images/2topcounties.png)
 
-![title](images/bottomcounties.png)
+![title](images/2bottomcounties.png)
 
-- Now let's at a look at each district's average teacher salary vs the percentage of students who met or exceeded standard in that same district.
+- We can clearly see a large difference in salary. Now let's at a look at each district's average teacher salary vs the percentage of students who met or exceeded standard in that same district.
 
 ![title](images/scatterpay_met.png)
 
