@@ -1,6 +1,6 @@
 # Salaries and Standards
 
-***Do students from top paying districts score the same or better than students who attend lower paying districts?***
+***Do students from top paying districts score the same as students who attend lower paying Districts?***
 
 **Questions to explore**
 - Do districts with higher salary have higher test scores?
@@ -52,7 +52,7 @@
 
 ![title](images/scatterpay_met.png)
 
-- The above graph is alot - in fact, it is over 8,000 dots! Lets group each District and look at them individually and see how that District's average salary compares to the percentage of students who met or exceeded standard for the whole County. 
+- The above graph is alot - in fact, it is over 8,000 dots since we were looking at every school. Lets group each School together by their District and look at them individually and see how that District's average salary compares to the percentage of students who met or exceeded standard for the whole County. 
 
 ![title](images/scatterpaybydistrict.png)
 
@@ -66,7 +66,7 @@
 
 - Great! Now that we have our student scores seperated out by ELA and Math let's get to our main question. **Do students from top paying Districts score the same or better than students who attend lower paying Districts?**
 
-- Lets seperate out the top paying Districts from the bottom paying Districts by splitting them at the Median and see how their students perform on both ELA and Math tests. We have fairly equal data frames of about 2100 Districts in each, lets run a t-test with the standard alpha level of 0.05 to test our null hypothesis that was created prior to seeing any of this data.
+- Lets seperate out the top paying Districts from the bottom paying Districts by splitting them at the Median and see how their students perform on both ELA and Math tests. We have fairly equal data frames of about 2100 Schools in each, lets run a t-test with the standard alpha level of 0.05 to test our null hypothesis that was created prior to seeing any of this data.
 
 *Null Hypothesis: Students from top paying Districts score the same as students from lower paying Districts.*
 
@@ -94,4 +94,5 @@
 **Conclusion**
 - Yes, we want our students to be able to read, write and perserver though difficult math problems. It has been shown above that there is a lot of work that needs to be done to ensure our students are meeting standards for their grade level. 
 - We also need to ensure that adults are entering the educational career field. Teacher shoul feel respected and appreciated for the hard work that it takes to do their job. 
-- It has been shown that students from higher paying Districts perform better, but I would not say it is solely because teachers are paid more. Those Districts most likely offer a larger variety of instruction (like music, art, and specialized classes), on campus clubs, and maybe even mental health supports that we know can benefit the whole child. 
+- It has been shown that students from higher paying Districts perform better, but I would not say it is solely because teachers are paid more. Those Districts most likely offer a larger variety of instruction (like music, art, and specialized classes), on campus clubs, and spend money on building their campus community and culture.
+- Teachers make a difference, and the positive ways they can impact our lives go beyond test scores.
