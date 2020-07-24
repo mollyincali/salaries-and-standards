@@ -22,7 +22,7 @@
     - Standard exceeded
     - Standard met
     - Standard nearly met
-    - Standard not Met
+    - Standard not met
 - For the purpose of this data exploration we are only interested in students who fall into the "exceed" or "met" category.  
 - Teacher salary data reports aggregated data on the lowest, average, and highest reported salary for each District in California
 - Teacher salary data only matches up to the SBAC data by District Name, which can take on many forms. 
@@ -31,7 +31,7 @@
 - Counties ---> Districts --> Schools
 - There are 58 Counties in California with over 900 Districts and each District has their own number of schools
 - The largest District is Los Angeles Unified serving 596,937 students
-- There are at least 10 Districts serving 10 or fewers students
+- There are at least 10 Districts serving 10 or fewer students
 - Students in grade 3 - 8 and 11 will take both the ELA and Math SBAC (Smarter Balanced Assessment Consortium)
 - The terms "proficient" and "standards met" are interchangeable
 
