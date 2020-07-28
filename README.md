@@ -61,8 +61,6 @@
 
 - The results of our t-test with scipy-stats for our Math score is a little different, we receive a p-value of 1.4068 e-60. Another significat number, telling us we can reject our null hypothesis and accept the alternate.
 
-![title](images/pvalue.png)
-
 *Students from top paying Districts DO score better than students from lower paying Districts.* 
 
 - Let's visualize the spread of top paying Districts and bottom paying Districts by each subject test.
