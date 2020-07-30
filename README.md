@@ -76,7 +76,7 @@
 <img src="https://github.com/mollyincali/teacher-pay/blob/master/images/avgsalary.png" width="400" height="350"><img src="https://github.com/mollyincali/teacher-pay/blob/master/images/percentmet.png" width="400" height="350">
 
 **Conclusion**
-- Yes, we want our students to be able to read, write and perserver though difficult math problems. It has been shown above that there is a lot of work that needs to be done to ensure our students are meeting standards for their grade level. 
+- Yes, we want our students to be able to read, write and persevere though difficult math problems. It has been shown above that there is a lot of work that needs to be done to ensure our students are meeting standards for their grade level. 
 
 - For Districts who want higher test scores, paying teachers more can pay off but it will take more than just that. Those top paying Districts most likely offer a larger variety of instruction (like music, art, and specialized classes such as coding or woodshop), they probably have on campus clubs, and spend money on building their campus community and culture. All of which is known to support the whole child.
 
